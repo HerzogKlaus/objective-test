@@ -12,7 +12,7 @@ export default {
 		users: []
 	}),
 	getters: {
-		allUsers(state: IUsersState): IUserDto[]{
+		allUsers(state: IUsersState): IUserDto[] {
 			return state.users;
 		}
 	},
@@ -22,9 +22,9 @@ export default {
 		}
 	},
 	actions: {
-		async getUsers({ commit }: ActionContext<IUsersState, IState>, payload: string): Promise<void> {
+		async getUsers({commit}: ActionContext<IUsersState, IState>, payload: string): Promise<void> {
 			if (payload) {
-				const { items }: IUsersDto = await UsersApi.getAll(payload);
+				const {items}: IUsersDto = await UsersApi.getAll(payload);
 				commit('setUsers', items);
 			} else {
 				commit('setUsers', []);

@@ -1,11 +1,13 @@
 <template>
 	<div class="autocomplete-input__options">
-		<autocomplete-input-option v-for="option in options" :key="option[optionKey]" :label="option[optionLabelKey]" @click="$emit('onSelect', option[optionLabelKey])"/>
+		<autocomplete-input-option v-for="option in options" :key="option[optionKey]" :label="option[optionLabelKey]"
+															 @click="$emit('onSelect', option[optionLabelKey])"/>
 	</div>
 </template>
 
 <script lang="ts">
 import AutocompleteInputOption from "components/AutocompleteInputOption/AutocompleteInputOption.vue";
+
 export default {
 	name: "AutocompleteInputOptions",
 	components: {AutocompleteInputOption},
@@ -26,6 +28,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "AutocompleteInputOptions";
 </style>
